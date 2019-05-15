@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.qhit.companyinfo.dao.ICompanyinfoDao"> 
+	<!-- 自定义结果集 --> 
+	<resultMap id="BaseResultMap" type="com.qhit.companyinfo.pojo.Companyinfo"> 
+		<id property="cid" column="cid" javaType="java.lang.Integer"></id> 
+		<result property="compname" column="compname" javaType="java.lang.String"></result> 
+		<result property="ownername" column="ownername" javaType="java.lang.String"></result> 
+		<result property="ownertel" column="ownertel" javaType="java.lang.String"></result> 
+		<result property="compinfo" column="compinfo" javaType="java.lang.String"></result> 
+	</resultMap> 
+ 
+	<!-- 在各种标签中，id属性必须与接口中的方法名一样，id的值必须是唯一的，parameterType指查询时使用的参数类型， 
+	resultType属性指明查询返回的结果集类型    --> 
+ 
+	<sql id="Base_Column_List" > 
+		cid,compname,ownername,ownertel,compinfo 
+	</sql> 
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+		where cid = #{cid} 
+	</select> 
+	<delete id="delete" parameterType="java.lang.Integer" > 
+		delete from companyinfo 
+		where cid = #{cid} 
+	</delete> 
+	<insert id="insert" parameterType="com.qhit.companyinfo.pojo.Companyinfo" > 
+		insert into companyinfo(compname,ownername,ownertel,compinfo) 
+		values (#{compname},#{ownername},#{ownertel},#{compinfo}) 
+	</insert> 
+	<update id="updateSelective" parameterType="com.qhit.companyinfo.pojo.Companyinfo" > 
+		update companyinfo 
+		<set > 
+			<if test="compname != null and compname!='' " > 
+				compname = #{compname}, 
+			</if> 
+			<if test="ownername != null and ownername!='' " > 
+				ownername = #{ownername}, 
+			</if> 
+			<if test="ownertel != null and ownertel!='' " > 
+				ownertel = #{ownertel}, 
+			</if> 
+			<if test="compinfo != null and compinfo!='' " > 
+				compinfo = #{compinfo}, 
+			</if> 
+		</set> 
+		where cid = #{cid} 
+	</update> 
+	<update id="update" parameterType="com.qhit.companyinfo.pojo.Companyinfo" > 
+		update companyinfo 
+		set  compname = #{compname}, ownername = #{ownername}, ownertel = #{ownertel}, compinfo = #{compinfo} 
+		where cid = #{cid} 
+	</update> 
+	<select id="findAll" resultMap="BaseResultMap" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+	</select> 
+	<select id="findByCompname" resultMap="BaseResultMap" parameterType="java.lang.String" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+		where compname = #{compname} 
+	</select> 
+	<select id="findByOwnername" resultMap="BaseResultMap" parameterType="java.lang.String" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+		where ownername = #{ownername} 
+	</select> 
+	<select id="findByOwnertel" resultMap="BaseResultMap" parameterType="java.lang.String" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+		where ownertel = #{ownertel} 
+	</select> 
+	<select id="findByCompinfo" resultMap="BaseResultMap" parameterType="java.lang.String" > 
+		select 
+		<include refid="Base_Column_List" /> 
+		from companyinfo 
+		where compinfo = #{compinfo} 
+	</select> 
+	<delete id="deleteBatch" parameterType="java.util.Arrays"> 
+		delete from companyinfo where cid in 
+		<foreach collection="array" item="id" open="(" close=")" separator=","> 
+			#{id} 
+		</foreach> 
+	</delete> 
+	<select id="search" parameterType="com.qhit.companyinfo.pojo.Companyinfo" resultMap="BaseResultMap"> 
+		select * from  companyinfo 
+		<where > 
+			<if test="compname != null and compname!='' " > 
+				 and compname = #{compname} 
+			</if> 
+			<if test="ownername != null and ownername!='' " > 
+				 and ownername = #{ownername} 
+			</if> 
+			<if test="ownertel != null and ownertel!='' " > 
+				 and ownertel = #{ownertel} 
+			</if> 
+			<if test="compinfo != null and compinfo!='' " > 
+				 and compinfo = #{compinfo} 
+			</if> 
+		</where> 
+	</select> 
+</mapper> 

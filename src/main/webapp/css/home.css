@@ -1,0 +1,178 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #f7ffea;color: indigo;
+}
+A, BODY, INPUT, SELECT, TABLE, TD, OPTION, TR,button {
+    font-family: "微软雅黑", "MS SONG", "SimSun", "tahoma", "sans-serif";
+    font-size: 14px;
+}
+.page{margin:0 auto; width:900px; color:white;}
+.page  .nav{display:inline-block; width:900px; height:40px; background: #ec21aa;margin-top: 0px;}
+.page  .nav span{float:left; margin-left:70px;margin-top: 10px;}
+.userInfo{
+    margin-right: 40px;
+    text-align: right;
+    font-size: 9px;
+}
+.STYLE2{
+    font-size:16px;
+    font-family:微软雅黑;
+    color: white;
+}
+
+.main{
+
+}
+
+.main h1{
+    text-align: center;
+}
+
+.main .rank{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/** 列表**/
+
+.main table{
+    margin-top: 20px;
+    width: 90%;
+    border-radius: 6px;
+    border:solid #00EC00 1px;
+}
+
+.main table td, .main table th {
+    border-left: 1px solid #d3b4ec;
+    border-top: 1px solid #00EC00;
+    padding: 10px;
+    text-align: left;
+    font-family: "微软雅黑", "MS SONG", "SimSun", "tahoma", "sans-serif";
+    font-size: 12px;
+    /*font-family: '我的华康娃娃体';*/
+    /*src:url('../fonts/华康娃娃体W5(P).TTF');*/
+    /*font-size: 12px;*/
+    /*color:brown;*/
+    word-break: keep-all;
+}
+
+.main table thead{
+    height: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ec86d0;
+
+}
+
+.main tbody tr{
+    height: 18px;
+    line-height: 18px;
+}
+.main tbody tr:hover{
+    background-color: #59ff2d;
+}
+
+/*左侧列表*/
+.page .margin_div .page_main{float:left; width:900px; margin-top:0px;margin-left:30px;}
+.page .margin_div .page_main .left_nav{float:left; width:154px;list-style-type: none; padding: 0px;}
+.page .margin_div .page_main .left_nav li:not([class~='current']){float:left; width:134px; height:34px; background: #e2ec58;color:white;border-radius: 5px; line-height:34px;  text-indent:24px; margin: 10px 0;padding-left:25px ;cursor: pointer;font-size: 14px;font-family:微软雅黑;}
+.page .margin_div .page_main .left_nav li[class~='current']{float:left; width:134px; height:34px; background:#ec86d0;color:white;border-radius: 5px; line-height:34px;  text-indent:24px; margin: 10px 0;padding-left:25px ;cursor: pointer;font-size: 14px;font-family:微软雅黑;}
+
+/**添加页面 */
+.update .left{
+    margin-top: 10px;
+    display: inline-block;
+    width: 45%;
+    line-height: 30px;
+}
+.update .right{
+    margin-top: 10px;
+    display: inline-block;
+    width: 45%;
+    line-height: 30px;
+}
+.update .left span{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+.update .right span{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+.update input{
+    width: 200px;
+    height: 30px;
+    border-width: 1px;
+    border-radius: 3px;
+    padding-left: 2px;
+    background-color: #d18fec;
+    color: white;
+}
+
+
+.update .buttons{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.update .buttons input[type='submit'],.update .buttons input[type='button']{
+    margin-left: 20px;
+    width: 80px;
+    height: 30px;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #d18fec;
+    color: white;
+}
+
+
+
+/*下拉框*/
+select{
+    width: 200px;
+    height: 30px;
+    border-width: 1px;
+    border-radius: 3px;
+}
+/*查询*/
+.search{
+    margin: 10px 100px;
+    text-align: left;
+}
+.search span{
+    width: 20%;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+.search span input,.search span select{
+    width: 120px;
+    height: 30px;
+    border-width: 1px;
+    border-radius: 3px;
+    margin-left: 10px;
+    background-color: #d18fec;
+    color:white;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+.search span button{
+    margin-left: 30px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #d18fec;
+    color:white;
+    font-size: 14px;
+}
+
+
